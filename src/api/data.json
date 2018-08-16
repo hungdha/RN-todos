@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "text": "iPad 4 Mini",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "text": "iPad 5 Mini",
+    "completed": true
+  },
+  {
+    "id": 3,
+    "text": "iPad 6 Mini",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "text": "iPad 7 Mini",
+    "completed": false
+  },
+]
