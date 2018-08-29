@@ -1,30 +1,30 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import thunk from 'redux-thunk';
-// import createLogger from 'redux-logger';
-
-
-import App from '../components/App'
-import rootReducer from '../reducers'
-import { getAllTodos } from '../actions';
-
-
-const middleware = [thunk];
-
-// console.log('middleware');
-const store = createStore(
-    rootReducer,
-    applyMiddleware(...middleware)
-)
-
-store.dispatch(getAllTodos())
+import { View, Text, Button } from 'react-native'
+// import App from '../components/App';
 
 export default class Todos extends React.Component {
+    static navigationOptions = {
+        title: 'Todos',
+        headerRight: (
+            <Button
+              onPress={() => alert('This is a button!')}
+              title="Info"
+              color="#fff"
+            />
+          ),
+      };
     render() {
-        return (<Provider store={store}>
-            <App />
-        </Provider>)
+        const { navigate } = this.props.navigation;
+        return (
+            <View>
+                <Button
+                    title="Edit Todo"
+                    onPress={() =>
+                    navigate('EditTodo', { name: 'Jane' })
+                    }
+                />
+                <Text>lorem iasdsad adas dasdasd</Text>
+            </View>
+        );
     }
 }

@@ -8,7 +8,7 @@ class AddTodo extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: 'xxx'
+			text: ''
 		};
 	}
 	handleAddTodo(event) {
@@ -23,7 +23,7 @@ class AddTodo extends React.Component {
 					 onChangeText={(text) => this.setState({text})}
 					 value={this.state.text}
 				/>
-				<Button title="Add Todo" onPress={this.handleAddTodo.bind(this)} />
+				<Button title="Add Todo" onPress={this.handleAddTodo.bind(this)} disabled={ this.state.text ? false : true } />
 			</View>
 		)
 	}

@@ -4,12 +4,12 @@
         "source": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
@@ -28,12 +28,12 @@
         "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_action.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Documents\\Projects\\AwesomeProject3\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
