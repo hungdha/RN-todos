@@ -1,50 +1,51 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import thunk from 'redux-thunk';
-// import createLogger from 'redux-logger';
-
-
-// import App from '../components/App'
-import rootReducer from '../reducers'
-import { getAllTodos } from '../actions';
-import { MenuProvider } from 'react-native-popup-menu';
-
-
-const middleware = [thunk];
-
-// console.log('middleware');
-const store = createStore(
-    rootReducer,
-    applyMiddleware(...middleware)
-)
-
-store.dispatch(getAllTodos())
-
-
+import React, { Component } from 'react';
 import {
-    createStackNavigator,
-} from 'react-navigation';
-import TodosScreen from './Todos';
-import EditTodoScreen from './EditTodo';
+  View, Text,
+  StyleSheet,
+  ActivityIndicator
+} from 'react-native';
 
-const RootStack = createStackNavigator(
-    {
-        Todos: TodosScreen,
-        EditTodo: EditTodoScreen
-    },
-    {
-        initialRouteName: 'Home',
-    }
-);
-export default class Main extends React.Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <MenuProvider>
-                    <RootStack />
-                </MenuProvider>
-            </Provider>)
-    }
+export default class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timer: 5,
+    };
+  }
+  componentDidMount() {
+    const { navigation } = this.props;
+    setTimeout(() => {
+      navigation.navigate('SignIn')
+    }, 5000)
+
+    /* this.timerID = setInterval(
+      () => this.countDown,
+      1000
+    ); */
+  }
+  countDown() {
+    /* this.setState((prevState, props) => {
+      return {timer: prevState.timer -1 };
+    }); */
+  }
+  componentWillUnmount() {
+
+    // clearInterval(this.timerID);
+  }
+
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text> Welcome to React Native App</Text>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+})

@@ -9,7 +9,12 @@ import {
 
 const styles = StyleSheet.create({
     container:{
-padding: 10,
+      padding: 10,
+      flex: 1,
+    },
+    error:{
+      color: 'red',
+      fontStyle: 'italic',
     }
 })
 
@@ -27,19 +32,30 @@ export default class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username  : 'admin',
+      password : 'admin'
     };
   }
   _signInAsync = async () => {
-    await AsyncStorage.setItem('userToken', 'abc');
-    this.props.navigation.navigate('Home');
+    if(this.state.username == 'admin' || this.state.passoword == 'admin'){
+      await AsyncStorage.setItem('userToken', 'abc');
+      this.props.navigation.navigate('Home');
+    }else{
+      this.setState({
+        error: 'Username or password invalid !!!'
+      })
+    }
   };
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text> SignIn </Text>
-        <TextInput placeholder="username"  />
-        <TextInput placeholder="password"  />
+        <Text style={styles.error}>{this.state.error}</Text>
+        <TextInput placeholder="username" onChangeText={(un) => this.setState({username: un})}  value={this.state.username} />
+        <TextInput placeholder="password" onChangeText={(pw) => this.setState({
+          passoword : pw
+        })} secureTextEntry={true}  value={this.state.password} />
         <Button
               onPress={this._signInAsync}
               title="Login"
