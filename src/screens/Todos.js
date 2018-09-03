@@ -13,17 +13,30 @@ export default class Todos extends React.Component {
             />
           ),
       };
-    render() {
+
+    handleNavigation(res){
+        // const {text} = event.target.value;
         const { navigate } = this.props.navigation;
+        navigate('EditTodo', { name: res.name });
+    }
+    render() {
+        const resources = [
+            {id: 1, name: "item 1"},
+            {id: 2, name: "item 2"},
+            {id: 3, name: "item 3"},
+            {id: 4, name: "item 4"},
+            {id: 5, name: "item 5"}
+        ]
         return (
             <View>
-                <Button
-                    title="Edit Todo"
-                    onPress={() =>
-                    navigate('EditTodo', { name: 'Jane' })
-                    }
-                />
-                <Text>lorem iasdsad adas dasdasd</Text>
+                {
+                    resources.map( (res, index ) =>  (
+                        <View key={res.id}>
+                            <Text>{res.name}</Text>  
+                            <Button onPress={this.handleNavigation(res)} title="Edit"  />      
+                        </View>
+                    ))
+                }
             </View>
         );
     }

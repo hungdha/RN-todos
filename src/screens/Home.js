@@ -49,6 +49,10 @@ export default class Home extends Component {
 			<View style={styles.container}>
 				<Text> Home !! </Text>
 				<Image source={logoSrc} style={{ width: 100, height: 100 }} />
+				<Button title="Todos" onPress={ () => (this.props.navigation.navigate('Todos')) } />
+				<Button title="Tabs" onPress={ () => (this.props.navigation.navigate('Tab')) } />
+				<Button title="Tabs Bottom" onPress={ () => (this.props.navigation.navigate('TabBottom')) } />
+				<Button title="Drawer navigation" onPress={ () => (this.props.navigation.navigate('Drawer')) } />
 				<Button title="Sign Out" onPress={this._signOutAsync} />
 			</View>
 		);

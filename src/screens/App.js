@@ -7,84 +7,95 @@ import {
     StyleSheet,
     View,
     Animated,
-    Easing
+    Easing,
+    Image
 } from 'react-native';
 import {
     createStackNavigator,
-    createSwitchNavigator
+    createSwitchNavigator,
 } from 'react-navigation';
-// import TodosScreen from './Todos';
-// import EditTodoScreen from './EditTodo';
-import Home from './Home';
-import Settings     from './Settings';
-import SignIn from './SignIn';
-// import ModalScreen from './Modal';
+
+
 import Main from './Main';
-
-
+import Todos from './Todos';
+import EditTodo from './EditTodo';
+import Home from './Home';
+import Settings from './Settings';
+import SignIn from './SignIn';
 import ForgotPassword from './ForgotPassword';
+import Tab from './Tab';
+import TabBottom from './TabBottom';
 import { MenuProvider } from 'react-native-popup-menu';
-// import { MenuProvider } from 'react-native-popup-menu';
-
-/* const AppNavigator = createStackNavigator(
-    {
-        Todos: TodosScreen,
-        EditTodo: EditTodoScreen
-    }, {
-        mode: 'modal',
-        headerMode: 'none'
-    }); */
+import DrawerExample from './DrawerExample';
+// import Drawer from './DrawerExample';
 
 
 
 const HomeNavigator = createStackNavigator({
-    Home :{
-        screen : Home
+    Home: {
+        screen: Home
     },
     Settings: {
-        screen : Settings
+        screen: Settings
+    },
+    Todos: {
+        screen: Todos
+    },
+    EditTodo: {
+        screen: EditTodo
+    },
+    Tab: {
+        screen: Tab
+    },
+    TabBottom: {
+        screen: TabBottom
+    },
+    Drawer: {
+        screen: DrawerExample
     }
- }); 
- 
- const ModalNavigator =createStackNavigator(
+}
+);
+
+
+const ModalNavigator = createStackNavigator(
     {
-      Main: { screen: Main },
-      SignIn: {screen: SignIn},
-      ForgotPassword: {screen:ForgotPassword},
+        Main: { screen: Main },
+        SignIn: { screen: SignIn },
+        ForgotPassword: { screen: ForgotPassword },
     },
     {
-      initialRouteName:'Main',
-      headerMode: 'none',
-      mode: 'modal',
-      navigationOptions: {
-        gesturesEnabled: false,
-      },
-      transitionConfig: () => ({
-        transitionSpec: {
-          duration: 300,
-          easing: Easing.out(Easing.poly(4)),
-          timing: Animated.timing,
+        initialRouteName: 'Main',
+        headerMode: 'none',
+        mode: 'modal',
+        navigationOptions: {
+            gesturesEnabled: false,
         },
-        screenInterpolator: sceneProps => {
-          const { layout, position, scene } = sceneProps;
-          const { index } = scene;
-  
-          const height = layout.initHeight;
-          const translateY = position.interpolate({
-            inputRange: [index - 1, index, index + 1],
-            outputRange: [height, 0, 0],
-          });
-  
-          const opacity = position.interpolate({
-            inputRange: [index - 1, index - 0.99, index],
-            outputRange: [0, 1, 1],
-          });
-  
-          return { opacity, transform: [{ translateY }] };
-        },
-      }),
+        transitionConfig: () => ({
+            transitionSpec: {
+                duration: 300,
+                easing: Easing.out(Easing.poly(4)),
+                timing: Animated.timing,
+            },
+            screenInterpolator: sceneProps => {
+                const { layout, position, scene } = sceneProps;
+                const { index } = scene;
+
+                const height = layout.initHeight;
+                const translateY = position.interpolate({
+                    inputRange: [index - 1, index, index + 1],
+                    outputRange: [height, 0, 0],
+                });
+
+                const opacity = position.interpolate({
+                    inputRange: [index - 1, index - 0.99, index],
+                    outputRange: [0, 1, 1],
+                });
+
+                return { opacity, transform: [{ translateY }] };
+            },
+        }),
     }
-  );
+);
 
 
 class AuthLoadingScreen extends Component {
@@ -113,26 +124,28 @@ class AuthLoadingScreen extends Component {
     }
 }
 
-class HomeScreen extends Component{
+class HomeScreen extends Component {
     static router = HomeNavigator.router;
-    render(){
+    render() {
         return (
-        <MenuProvider>
-            <HomeNavigator navigation={this.props.navigation} />
-        </MenuProvider>)
+            <MenuProvider>
+                <HomeNavigator navigation={this.props.navigation} />
+            </MenuProvider>)
     }
 }
 
 
-class ModalScreen extends Component{
+class ModalScreen extends Component {
     static router = ModalNavigator.router;
-    render(){
+    render() {
         return (
             <ModalNavigator navigation={this.props.navigation} />
         )
 
     }
 }
+
+
 
 
 const AppNavigator = createSwitchNavigator(

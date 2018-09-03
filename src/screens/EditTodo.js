@@ -5,13 +5,7 @@ export default class EditTodo extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam('name', 'Edit Todo'),
-      headerStyle: {
-        backgroundColor: '#f4511e',
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      
     };
   };
   constructor(props) {
@@ -22,9 +16,7 @@ export default class EditTodo extends Component {
 
   render() {
     const { navigation } = this.props;
-    const name = navigation.getParam('name', 'NO-ID');
-    console.log('Name........')
-    console.log(name);
+    // const name = navigation.getParam('name', 'NO-ID');
     return (
       <View>
         <Text> Edit Todo </Text>
