@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {View, Button, Text, Platform, ScrollView, StyleSheet,
      Image,
      TouchableHighlight} from 'react-native';
@@ -20,8 +20,9 @@ import khiIcon from '../assets/images/khi.png';
 import hpLogo from '../assets/images/hp_logo.png';
 import styles from './Drawers/styles';
 import gruntLogo from '../assets/images/grunt-logo.png';
-import rnLogo from '../assets/images/logo.png';
+import rnLogo from '../assets/images/logo-native.png';
 import homeIcon from '../assets/images/home.png';
+
 
 class DrawerContent extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class DrawerContent extends Component {
                     Header
                 </Text>
             </View>
-        <DrawerItems {...props} />
+        <DrawerItems {...this.props} />
       </View>
     );
   }
@@ -62,7 +63,7 @@ const DrawerNavigator = createDrawerNavigator(
                 drawerLabel: 'Home',
                 drawerIcon: ({tintColor}) =>{
                     return (
-                        <Image 
+                        <Image
                         source={homeIcon}
                         style={[styles.icon,{tintColor: tintColor }]} />
                     )
@@ -101,7 +102,7 @@ const DrawerNavigator = createDrawerNavigator(
                     );
                 }
             }
-            
+
 
         },
         Third: {
@@ -111,7 +112,7 @@ const DrawerNavigator = createDrawerNavigator(
                 tabBarLabel : 'Screen 3',
                 drawerIcon : ({tintColor}) =>{
                     return (
-                        <Image source={gruntLogo} 
+                        <Image source={gruntLogo}
                         style={[styles.icon, {tintColor: tintColor}]}
                         />
                     )
@@ -136,7 +137,7 @@ const DrawerNavigator = createDrawerNavigator(
     {
         initialRouteName: 'First',
         drawerPosition: 'left',
-        
+
         // drawerWidth: 200,
         contentOptions: {
             activeTintColor: 'red',
@@ -156,19 +157,19 @@ export default class DrawerExample extends React.Component{
                     justifyContent:'center',
                     alignItems: 'center',
                 }}>
-                <Image source={require('../assets/images/logo.png')}   style={styles.logo} />
+                <Image source={require('../assets/images/logo-native.png')}   style={styles.logo} />
                 </View>
             ),
             headerLeft : () =>{
                 return (
                     <TouchableHighlight onPress={() => navigation.toggleDrawer()}>
-                        <Image source={iconHambuger} 
-                        style={{ width:25, height: 25, marginLeft:10}} 
+                        <Image source={iconHambuger}
+                        style={{ width:25, height: 25, marginLeft:10}}
                         />
                     </TouchableHighlight>
                 )
             },
-            
+
         }
     }
     render(){

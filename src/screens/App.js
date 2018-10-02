@@ -8,7 +8,8 @@ import {
     View,
     Animated,
     Easing,
-    Image
+    Image,
+    Navigator
 } from 'react-native';
 import {
     createStackNavigator,
@@ -16,7 +17,7 @@ import {
 } from 'react-navigation';
 
 
-import Main from './Main';
+import Welcome from './Welcome';
 import Todos from './Todos';
 import EditTodo from './EditTodo';
 import Home from './Home';
@@ -25,6 +26,10 @@ import SignIn from './SignIn';
 import ForgotPassword from './ForgotPassword';
 import Tab from './Tab';
 import TabBottom from './TabBottom';
+import ContactsScreen from './ContactsScreen';
+import AddContactScreen from './AddContactScreen';
+
+
 import { MenuProvider } from 'react-native-popup-menu';
 import DrawerExample from './DrawerExample';
 // import Drawer from './DrawerExample';
@@ -52,6 +57,16 @@ const HomeNavigator = createStackNavigator({
     },
     Drawer: {
         screen: DrawerExample
+    },
+    ContactsScreen : {
+        screen : ContactsScreen,
+        navigationOptions : {
+            drawerLabel: 'Contacts'
+        }
+    },
+    AddContactScreen : {
+        screen : AddContactScreen,
+       
     }
 }
 );
@@ -59,12 +74,12 @@ const HomeNavigator = createStackNavigator({
 
 const ModalNavigator = createStackNavigator(
     {
-        Main: { screen: Main },
+        Welcome: { screen: Welcome },
         SignIn: { screen: SignIn },
         ForgotPassword: { screen: ForgotPassword },
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Welcome',
         headerMode: 'none',
         mode: 'modal',
         navigationOptions: {
@@ -110,7 +125,7 @@ class AuthLoadingScreen extends Component {
 
         // This will switch to the App screen or Auth screen and this loading
         // screen will be unmounted and thrown away.
-        this.props.navigation.navigate(userToken ? 'Home' : 'Main');
+        this.props.navigation.navigate(userToken ? 'Home' : 'Welcome');
     };
 
     // Render any loading content that you like here
@@ -141,7 +156,6 @@ class ModalScreen extends Component {
         return (
             <ModalNavigator navigation={this.props.navigation} />
         )
-
     }
 }
 

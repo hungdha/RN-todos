@@ -11,9 +11,9 @@ import AppScreen from './src/screens/App';
 // import InFlatListExample from './src/screens/InFlatListExample';
 
 export default class App extends React.Component {
-  	render() {
-		return (
-      		<AppScreen />
-		);
-	}
+       render() {
+  		    return (
+        		<AppScreen />
+    		);
+  	}
 }

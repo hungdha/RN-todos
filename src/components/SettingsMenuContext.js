@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, AsyncStorage } from 'react-native';
 import {
     Menu,
     MenuOptions,
@@ -13,7 +13,10 @@ export default class SettingsMenuContext extends Component {
     this.state = {
     };
   }
-
+  _logOut = () =>{
+    AsyncStorage.clear(); 
+    this.props.navigation.navigate('SignIn')
+  }
   render() {
     return (
       <View>
@@ -25,6 +28,7 @@ export default class SettingsMenuContext extends Component {
                   <MenuOption onSelect={() => alert(`Edit`)} text='Edit' />
                   <MenuOption onSelect={() => this.props.navigation.navigate('Settings') } text='Options' />
                   <MenuOption onSelect={() => alert(`Show`)} text='Show' />
+                  <MenuOption onSelect={() => {  this._logOut() }} text='Log out' />
               </MenuOptions>
             </Menu>
       </View>

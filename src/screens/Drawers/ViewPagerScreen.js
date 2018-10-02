@@ -9,13 +9,18 @@ import {
     FlatList,
     SectionList,
     StyleSheet, ScrollView,
-    Dimensions 
+    Dimensions
 } from 'react-native';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+// screens
+import UsersFlatList from './UsersFlatList';
+import UsersSectionList from './UsersSectionList';
+
 import styles from './styles';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo-native.png';
 // import InFlatListExample from '../InFlatListExample';
-import contacts from '../../api/contacts.json';
+
 
 var mWidth = Dimensions.get('window').width; //full width
 var mHeight = Dimensions.get('window').height; //full height
@@ -61,44 +66,6 @@ class ContactForm extends Component {
     }
 }
 
-class FlatListBasics extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <FlatList
-                    data={contacts}
-                    renderItem={
-                        ({ item }) => 
-                            (<View style={styles.row}>
-                                <Text style={styles.item}>{item.id} - {item.name}</Text>
-                            </View>)
-                        }
-                />
-            </View>
-        );
-    }
-}
-
-class SectionListBasics extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <SectionList
-                    sections={[
-                        { title: 'D', data: ['Devin'] },
-                        { title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie'] },
-                        { title: 'K', data: ['Karik', 'Kieu', 'Kim'] },
-                        { title: 'O', data: ['Oh', 'Oanh', 'Oah'] },
-                    ]}
-                    renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
-                    renderSectionHeader={({ section }) => (<View style={styles.row}><Text style={styles.sectionHeader}>{section.title}</Text></View>)}
-                    keyExtractor={(item, index) => index}
-                />
-            </View>
-        );
-    }
-}
-
 
 class ButtonCustom extends Component{
     _setPageIndex(){
@@ -130,12 +97,12 @@ export default class ViewPagerScreen extends React.Component {
         console.log("position: " + event.nativeEvent.position)
         console.log("offset : " + event.nativeEvent.offset)
     }
-    
+
     render() {
         return (
             <View style={{ flex: 1 }}>
                 <View style={{
-                    width: mWidth, 
+                    width: mWidth,
                     height: 50,
                     backgroundColor:'#f4f4f4',
                     alignItems:'center',
@@ -149,7 +116,7 @@ export default class ViewPagerScreen extends React.Component {
                     onPageSelected={this._pageSelected.bind(this)}
                     onPageScroll={this._onPageScroll.bind(this)}
                     scrollEnabled={true}
-                    
+
                 >
                     <View style={styles.pageStyle} key="1">
                         <Text>ScrollView</Text>
@@ -171,11 +138,11 @@ export default class ViewPagerScreen extends React.Component {
                     </View>
                     <View style={styles.pageStyle} key="2">
                         <Text>Flat List</Text>
-                        <FlatListBasics ></FlatListBasics>
+                        <UsersFlatList ></UsersFlatList>
                     </View>
                     <View style={styles.pageStyle} key="3">
                         <Text>Section List</Text>
-                        <SectionListBasics ></SectionListBasics>
+                        <UsersSectionList ></UsersSectionList>
                     </View>
                     <View style={styles.pageStyle} key="4" >
                         <ContactForm />
