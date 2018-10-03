@@ -4,6 +4,9 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "eslint-plugin-react-native": "^3.2.1",
+    "expo-camera": "^1.0.1",
+    "expo-gl": "^1.0.1",
     "jest": "^23.4.2",
     "jest-react-native": "^18.0.0",
     "react-test-renderer": "16.3.1"
@@ -26,6 +29,8 @@
     "react-native-contacts": "^2.2.3",
     "react-native-popup-menu": "^0.14.0",
     "react-native-vector-icons": "^5.0.0",
+    "react-native-wheel-datepicker": "^2.2.3",
+    "react-native-wheel-picker": "^1.2.0",
     "react-navigation": "^2.12.1",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
@@ -35,6 +40,6 @@
   "rnpm": {
     "assets": [
       "./src/assets/fonts/"
-        ]
+    ]
   }
 }

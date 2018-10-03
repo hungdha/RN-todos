@@ -23,6 +23,7 @@ import EditTodo from './EditTodo';
 import Home from './Home';
 import Settings from './Settings';
 import SignIn from './SignIn';
+import SignUp from './SignUp';
 import ForgotPassword from './ForgotPassword';
 import Tab from './Tab';
 import TabBottom from './TabBottom';
@@ -76,10 +77,11 @@ const ModalNavigator = createStackNavigator(
     {
         Welcome: { screen: Welcome },
         SignIn: { screen: SignIn },
+        SignUp: { screen: SignUp },
         ForgotPassword: { screen: ForgotPassword },
     },
     {
-        initialRouteName: 'Welcome',
+        initialRouteName: 'SignUp',
         headerMode: 'none',
         mode: 'modal',
         navigationOptions: {
@@ -125,7 +127,7 @@ class AuthLoadingScreen extends Component {
 
         // This will switch to the App screen or Auth screen and this loading
         // screen will be unmounted and thrown away.
-        this.props.navigation.navigate(userToken ? 'Home' : 'Welcome');
+        this.props.navigation.navigate(userToken ? 'Home' : 'SignUp');
     };
 
     // Render any loading content that you like here

@@ -148,6 +148,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-wheel-datepicker')
     compile project(':react-native-vector-icons')
     compile project(':react-native-contacts')
     compile fileTree(dir: "libs", include: ["*.jar"])

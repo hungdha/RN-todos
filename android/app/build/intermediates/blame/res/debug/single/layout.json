@@ -4,12 +4,12 @@
         "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\layout\\redbox_item_title.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_activity_chooser_view.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
         "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Documents\\Projects\\Todos\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
