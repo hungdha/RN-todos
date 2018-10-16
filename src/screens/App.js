@@ -68,7 +68,9 @@ const HomeNavigator = createStackNavigator({
     AddContactScreen : {
         screen : AddContactScreen,
        
-    }
+    },
+    SignUp: { screen: SignUp },
+    ForgotPassword: { screen: ForgotPassword }
 }
 );
 
@@ -77,11 +79,11 @@ const ModalNavigator = createStackNavigator(
     {
         Welcome: { screen: Welcome },
         SignIn: { screen: SignIn },
-        SignUp: { screen: SignUp },
-        ForgotPassword: { screen: ForgotPassword },
+       
+       
     },
     {
-        initialRouteName: 'SignUp',
+        initialRouteName: 'Welcome',
         headerMode: 'none',
         mode: 'modal',
         navigationOptions: {

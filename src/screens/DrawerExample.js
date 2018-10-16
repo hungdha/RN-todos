@@ -10,6 +10,7 @@ import {
 import HomeScreen from '../screens/Home';
 // import HeaderScreen from './Drawers/HeaderScreen';
 import ViewPagerScreen from './Drawers/ViewPagerScreen';
+import ViewPagerAndroidExample from './Drawers/ViewPagerAndroidExample';
 import SecondScreen from './Drawers/SecondScreen';
 import ThirdScreen from './Drawers/ThirdScreen';
 import TabScreen from './Drawers/TabsScreen';
@@ -72,7 +73,7 @@ const DrawerNavigator = createDrawerNavigator(
         },
         First: {
             path: '/',
-            screen: ViewPagerScreen,
+            screen: ViewPagerAndroidExample,
             navigationOptions: {
                 tabBarLabel: 'Screen 1',
                 drawerLabel: 'View Pager',

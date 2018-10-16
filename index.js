@@ -1,3 +1,15 @@
 import { AppRegistry } from 'react-native';
 import App from './src';
+// import App from './src/screens/TakeImagePicker.js';
+// import App from './FixedDimensionsBasics';
+// import App from './JustifyContentBasics';
+// import App from './FlexDimensionsBasics';
+// import App from './Clock';
+// import App from './src/screens/FlatListBasics';
+// import App from './src/screens/Todos';
+// import App from './src/screens/App';
+// import App from './src/screens/TakeImagePicker';
+// import App from './src/screens/DrawerNav';
+// import App from './src/screens/DrawerExample';
+// import App from './src/screens/InFlatListExample';
 AppRegistry.registerComponent('AwesomeProject3', () => App);

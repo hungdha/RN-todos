@@ -4,6 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AwesomeProject3.iml" filepath="$PROJECT_DIR$/AwesomeProject3.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-contacts/android/react-native-contacts.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-contacts/android/react-native-contacts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-image-picker/android/react-native-image-picker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-image-picker/android/react-native-image-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-wheel-datepicker/android/react-native-wheel-datepicker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-wheel-datepicker/android/react-native-wheel-datepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-wheel-picker/android/react-native-wheel-picker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-wheel-picker/android/react-native-wheel-picker.iml" />
     </modules>
   </component>
 </project>

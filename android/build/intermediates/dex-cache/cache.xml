@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\DELL\Documents\Projects\Todos\android\app\build\intermediates\exploded-aar\AwesomeProject3\react-native-image-picker\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ed80840d302bee1f5dd42cefa1fa8e6100100535">
+        <dex dex="C:\Users\DELL\Documents\Projects\Todos\android\app\build\intermediates\pre-dexed\debug\AwesomeProject3-react-native-image-picker-unspecified_c47180e021869a1f02860cf9fbaef85c5994dee5.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\DELL\Documents\Projects\Todos\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"

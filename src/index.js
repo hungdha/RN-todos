@@ -1,5 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import { YellowBox } from 'react-native';
+console.disableYellowBox = true;
+YellowBox.ignoreWarnings(['Warning: ...']);
+
 // import FixedDimensionsBasics from './FixedDimensionsBasics';
 // import FlexDimensionsBasics from './FlexDimensionsBasics';
 // import Clock from './Clock';

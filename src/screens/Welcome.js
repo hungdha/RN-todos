@@ -8,32 +8,14 @@ import {
 export default class Welcome extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      timer: 5,
-    };
   }
   componentDidMount() {
     const { navigation } = this.props;
      setTimeout(() => {
       navigation.navigate('SignIn')
     }, 500) 
-
-    /* this.timerID = setInterval(
-      () => this.countDown,
-      1000
-    ); */
   }
-  countDown() {
-    /* this.setState((prevState, props) => {
-      return {timer: prevState.timer -1 };
-    }); */
-  }
-  componentWillUnmount() {
-
-    // clearInterval(this.timerID);
-  }
-
-
+  
   render() {
     return (
       <View style={styles.container}>

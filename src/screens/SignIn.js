@@ -16,6 +16,9 @@ import {
 import TextPlus from '../components/TextPlus';
 import TextInputPlus from '../components/TextInputPlus';
 import ButtonPlus from '../components/ButtonPlus';
+import axios from 'axios';
+import Loading from '../components/Loading';
+
 const { width, height } = Dimensions.get('window');
 export default class SignIn extends Component {
 	constructor(props) {
@@ -23,7 +26,9 @@ export default class SignIn extends Component {
 		this.state = {
 			username: 'admin',
 			password: 'admin',
-			keyboardShow: false
+			keyboardShow: false,
+			isLogging: false,
+			error : ''
 		};
 	}
 	_keyboardDidShow() {
@@ -46,15 +51,54 @@ export default class SignIn extends Component {
 		this.keyboardWillHideSub.remove();
 	}
 	_signInAsync = async () => {
-		if (this.state.username == 'admin' || this.state.password == 'admin') {
-			await AsyncStorage.setItem('userToken', 'abc');
-			this.props.navigation.navigate('Home');
-		} else {
+		console.log('logging....')
+		
+		try{
 			this.setState({
-				error: 'Username or password invalid !!!'
+				isLogging: true
 			});
+			const response = await axios.get('http://ergast.com/api/f1/seasons.json')
+			console.log(response)
+			if (this.state.username == 'admin' && this.state.password == 'admin') {
+				AsyncStorage.setItem('userToken', 'abc');
+				this.props.navigation.navigate('Home');
+				console.log('goo gogoooo')
+			} else {
+				this.setState({
+					isLogging : false,
+					error: 'Username or password invalid !!!'
+				});
+			}
+		  
 		}
-	};
+		catch(error) {
+		console.log(error);
+		}
+		
+
+		/*  
+		axios.get('http://localhost:3000/users/1')
+		  .then(function (response) {
+			console.log("myaixos response");
+			console.log(response);
+
+			if (this.state.username == 'admin' || this.state.password == 'admin') {
+				AsyncStorage.setItem('userToken', 'abc');
+				this.props.navigation.navigate('Home');
+			} else {
+				this.setState({
+					error: 'Username or password invalid !!!'
+				});
+			}
+
+		  })
+		  .catch(function (error) {
+			  console.log("my error")
+			console.log(error);
+		  });
+		  */
+		
+	}
 
 	renderLogo() {
 		return (
@@ -67,7 +111,7 @@ export default class SignIn extends Component {
 	renderForgot() {
 		return (
 			<View style={styles.forgot}>
-				<TextPlus onPress={() => navigate('ForgotPassword', { username: 'user01' })}>Forgot password</TextPlus>
+				<TextPlus onPress={() => this.props.navigation.navigate('ForgotPassword', { username: 'user01' })}>Forgot password</TextPlus>
 			</View>
 		);
 	}
@@ -85,9 +129,12 @@ export default class SignIn extends Component {
 
 	render() {
 		const { navigate } = this.props.navigation;
+		const {isLogging, error } = this.state;
 		return (
 			<KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
 				{this.renderLogo()}
+				<Loading isLoading={isLogging} title="Logging in"/>
+				<TextPlus style={styles.error} >{error}</TextPlus>
 				<View style={styles.form}>
 					<View>
 						<TextInputPlus
@@ -95,7 +142,7 @@ export default class SignIn extends Component {
 							onChangeText={(un) => this.setState({ username: un })}
 							value={this.state.username}
 							style={{ marginBottom: 15 }}
-							onSubmitEditing={Keyboard.dismiss}
+							
 						/>
 						<TextInputPlus
 							placeholder="Password"
@@ -106,6 +153,7 @@ export default class SignIn extends Component {
 							secureTextEntry={true}
 							value={this.state.password}
 							style={{ marginBottom: 15 }}
+							onSubmitEditing={Keyboard.dismiss}
 						/>
 					</View>
 					<View>
@@ -159,5 +207,9 @@ const styles = StyleSheet.create({
 		color: '#555000',
 		fontWeight: 'bold',
 		fontSize: 20
+	},
+	error:{
+		color:'red',
+		fontStyle : 'italic'
 	}
 });

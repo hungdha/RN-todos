@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.aigestudio.wheelpicker:WheelPicker-1.0.3">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../node_modules/react-native-wheel-datepicker/android/build/intermediates/exploded-aar/cn.aigestudio.wheelpicker/WheelPicker/1.0.3/res" />
+      <root url="jar://$PROJECT_DIR$/../node_modules/react-native-wheel-datepicker/android/build/intermediates/exploded-aar/cn.aigestudio.wheelpicker/WheelPicker/1.0.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.aigestudio.wheelpicker/WheelPicker/1.0.3/9fdfac8f62dac154aed5c497a371f8071f0270a6/WheelPicker-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
